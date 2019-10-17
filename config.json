@@ -1,0 +1,15 @@
+{
+    "port": 8080,
+    "totalQuestion":12,
+    
+    "weixin":{
+        "AppID": "wx2568eb273e8dd2d5",
+        "AppSecret": "d57032ad97aa63851d327b6e32f74756"
+    },
+    
+    "default": {
+        "api": {
+            "version" : "v1"
+        }
+    }
+}
