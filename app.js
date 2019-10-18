@@ -29,7 +29,7 @@ app.post("/sendemail", function(req, res) {
         "email",
         {
             to: "tyfountain_website@163.com", // REQUIRED. This can be a comma delimited string just like a normal email to field.
-            subject: "Test Email", // REQUIRED.
+            subject: "Enquiry Email", // REQUIRED.
             name, // All additional properties are also passed to the template as local variables.
             email, // All additional properties are also passed to the template as local variables.
             mobile, // All additional properties are also passed to the template as local variables.
