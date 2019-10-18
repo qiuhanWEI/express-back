@@ -24,7 +24,6 @@ app.set("view engine", "jade");
 
 app.post("/sendemail", function(req, res) {
     const { name, email, mobile, content } = req.body;
-    console.log("name---", name);
 
     app.mailer.send(
         "email",
@@ -40,11 +39,11 @@ app.post("/sendemail", function(req, res) {
             if (err) {
                 // handle error
                 console.log(err);
-                res.json({ msg: "There was an error sending the email" });
+                res.json({ msg: "Slow network, Try later please" });
 
                 return;
             }
-            res.json({ msg: "Email Sent" });
+            res.json({ msg: "Email Sent Successfully !" });
         }
     );
 });
