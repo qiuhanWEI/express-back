@@ -1,8 +1,18 @@
 var express = require("express");
-var cors = require("cors");
+// var cors = require("cors");
 var bodyParser = require("body-parser");
 var mailer = require("express-mailer");
 var app = express();
+
+//设置跨域访问
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    res.header("X-Powered-By",' 3.2.1')
+    res.header("Content-Type", "application/json;charset=utf-8");
+    next();
+});
 
 mailer.extend(app, {
     from: "tyfountain_website@163.com",
@@ -16,8 +26,9 @@ mailer.extend(app, {
     }
 });
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(cors());
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "jade");
@@ -49,5 +60,5 @@ app.post("/sendemail", function(req, res) {
 });
 
 app.listen(3001, function() {
-    console.log("CORS-enabled web server listening on port 3001");
+    console.log("CORS-enabled-1023 web server listening on port 3001");
 });
